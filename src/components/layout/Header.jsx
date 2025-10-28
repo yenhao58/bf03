@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { HiBars3 } from "react-icons/hi2";
+import { HiBars3, HiMoon, HiSun } from "react-icons/hi2";
 import { Link, useLocation } from "react-router-dom";
 import NavLinks from "./NavLinks";
 import { NAV_ITEMS, isPathActive } from "../../utils/navigation";
+import UserMenu from "./UserMenu";
+import { HiSave } from "react-icons/hi";
+import useTheme from "../../hooks/useTheme";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme("light");
   const location = useLocation();
   const isNavItemActiv = (path) => isPathActive(path, location.pathname);
   return (
@@ -46,6 +50,23 @@ export default function Header() {
             isActive={isNavItemActiv}
             listClassName="menu menu-horizontal px-1"
           />
+        </div>
+        {/* 導覽列右邊的部分:切換主題、使用者設定 */}
+        <div className="navbar-end flex items-center gap-2">
+          {/* 主題按鈕切換 */}
+          <button
+            onClick={toggleTheme}
+            aria-label="切換主題"
+            className="btn btn-ghost btn-circle border-2 bg-base-300"
+          >
+            {theme === "dark" ? (
+              <HiMoon className="w-6 h-6" />
+            ) : (
+              <HiSun className="w-6 h-6" />
+            )}
+          </button>
+          {/* 使用者設定: 下拉式選單 */}
+          <UserMenu />
         </div>
       </div>
     </header>
