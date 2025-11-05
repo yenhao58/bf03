@@ -16,7 +16,7 @@ export default function UserMenu({ items = defaultMenuItems }) {
                 >
                 <HiUser className="w-5 h-5 area-hidden" />
                 </div>
-            <ul className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box right-0 mun-w-max">
+            <ul className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box right-0 min-w-max">
                 {items.map(({ label, onClick, href }) => (
                     <li key={label}>
                         <Link
