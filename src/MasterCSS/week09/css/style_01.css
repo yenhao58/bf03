@@ -1,0 +1,35 @@
+.flex-container {
+    display: flex;
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.item {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.row { flex-direction: row; }
+.column { flex-direction: column; }
+/* 不換行（預設） */
+.nowrap {
+    flex-wrap: nowrap;
+    /* 所有項目在一行內，可能會溢出 */
+}
+
+/* 換行 */
+.wrap {
+    flex-wrap: wrap;
+    /* 項目會換到新行 */
+}
+
+/* 反向換行 */
+.wrap-reverse {
+    flex-wrap: wrap-reverse;
+    /* 項目會換行，但新行在上方 */
+}

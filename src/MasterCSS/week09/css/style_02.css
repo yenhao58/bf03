@@ -1,0 +1,67 @@
+.flex-container {
+    display: flex;
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.item {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.row { flex-direction: row; }
+.column { flex-direction: column; }
+/* 不換行（預設） */
+.nowrap {
+    flex-wrap: nowrap;
+    /* 所有項目在一行內，可能會溢出 */
+}
+
+/* 換行 */
+.wrap {
+    flex-wrap: wrap;
+    /* 項目會換到新行 */
+}
+
+/* 反向換行 */
+.wrap-reverse {
+    flex-wrap: wrap-reverse;
+    /* 項目會換行，但新行在上方 */
+}
+/* 起始對齊（預設） */
+.flex-start {
+    justify-content: flex-start;
+}
+
+/* 結束對齊 */
+.flex-end {
+    justify-content: flex-end;
+}
+
+/* 置中對齊 */
+.center {
+    justify-content: center;
+}
+
+/* 兩端對齊 */
+.space-between {
+    justify-content: space-between;
+    /* 第一個和最後一個項目貼邊，其他項目平均分布 */
+}
+
+/* 周圍分布 */
+.space-around {
+    justify-content: space-around;
+    /* 每個項目周圍有相等的空間 */
+}
+
+/* 均勻分布 */
+.space-evenly {
+    justify-content: space-evenly;
+    /* 項目和邊緣之間的空間都相等 */
+}
