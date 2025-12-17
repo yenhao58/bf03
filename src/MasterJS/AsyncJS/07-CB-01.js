@@ -58,6 +58,7 @@ const getUser = (id) => {
     });
 };
 
+/*
 getUser(1)
 .then((user) => {
     console.log(user);
@@ -74,3 +75,18 @@ getUser(1)
 .catch((err) => {
     console.error(err);
 });
+*/
+
+// async/await
+
+const showComments = async () => {
+    const user =  await getUser(1);
+    console.log(user);
+    const repos = await getRepos(user.name);
+    console.log(`user's repos:`, repos);
+    const comments = await getComments(repos[0]);
+    console.log(comments);
+    console.log("after");
+}
+
+showComments();
